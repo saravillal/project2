@@ -1,4 +1,5 @@
 <template>
+<NavBar></NavBar>
   <nav>
     <router-link to="/">Home</router-link> |
   </nav>
@@ -8,8 +9,12 @@
 <script>
 import userStore from '@/store/user';
 import { mapState, mapActions } from 'pinia';
+import NavBar from './components/NavBar.vue';
 
 export default {
+  components: {
+    NavBar,
+  },
   name: 'App',
   computed: {
     ...mapState(userStore, ['user']),
