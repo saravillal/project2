@@ -1,7 +1,8 @@
 <template>
-<NavBar></NavBar>
   <nav>
+    <NavBar></NavBar>
     <router-link to="/">Home</router-link> |
+    <router-link to="/">Log Out</router-link> |
   </nav>
   <router-view/>
 </template>
@@ -48,10 +49,16 @@ export default {
 }
 
 nav {
+  margin-left: 20%;
+  width: 80%;
+  display: flex;
   padding: 30px;
+  text-align: left;
 }
 
 nav a {
+  width: 10%;
+  margin-left: 2%;
   font-weight: bold;
   color: #2c3e50;
 }

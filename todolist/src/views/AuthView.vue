@@ -1,13 +1,18 @@
 <template>
+<div>
   <h1>Esta es la vista de SignUp/In</h1>
-  <button @click="signUp">SignUp</button>
+  <SignUp></SignUp>
+  </div>
 </template>
-
 <script>
 import { mapState, mapActions } from 'pinia';
 import userStore from '@/store/user';
+import SignUp from '../components/SignUp.vue';
 
 export default {
+  components: {
+    SignUp,
+  },
   name: 'AuthView',
   computed: {
     ...mapState(userStore, ['user']),

@@ -1,5 +1,7 @@
 <template>
-    <h1>Nav</h1>
+        <div class="flex">
+            <img src='../assets/logo.png' alt="" />
+        </div>
 </template>
 
 <script>
@@ -12,3 +14,8 @@ export default {
   },
 };
 </script>
+
+<style>
+img { width: 10%;
+height: auto;}
+</style>
