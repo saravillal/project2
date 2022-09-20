@@ -1,6 +1,5 @@
 <template>
 <div>
-  <h1>Esta es la vista de SignUp/In</h1>
   <SignUp></SignUp>
   </div>
 </template>
