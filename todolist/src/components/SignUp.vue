@@ -77,7 +77,7 @@ export default {
   height: 20%;
   width: 40%;
   text-align: center;
-  background-color: #92e7c5;
+  background-color: #69A6CA;
 }
 
 input {

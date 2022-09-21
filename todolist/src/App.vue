@@ -1,8 +1,6 @@
 <template>
   <nav>
-    <NavBar></NavBar>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/">Log Out</router-link> |
+    <NavBar></NavBar>|
   </nav>
   <router-view/>
 </template>
@@ -38,32 +36,3 @@ export default {
 };
 
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  margin-left: 20%;
-  width: 80%;
-  display: flex;
-  padding: 30px;
-  text-align: left;
-}
-
-nav a {
-  width: 10%;
-  margin-left: 2%;
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
