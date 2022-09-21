@@ -2,6 +2,7 @@
 <div v-if="errorMsg" class="error">{{ errorMsg }}</div>
 <form @submit.prevent="login">
 <div class="container">
+  <h1> Log In </h1>
 <div id="email">Email:</div> <input type="email" aria-labelledby="email" v-model="email">
 <div id="password">Password:</div>
 <input type="password" aria-labelledby="password" v-model="password">
@@ -62,13 +63,16 @@ export default {
 }
 
 input { margin-top: 1%;
-margin-bottom: 1%;
-width: 40%;}
+margin-bottom: %;
+width: 40%;
+}
 
 button {
     width: 20%;
+    height: 10%;
     font-size: 10px;
-margin-top: 5%;}
+margin-top: 3%;
+margin-bottom: 5%;}
 
 .error { color: red; }
 </style>

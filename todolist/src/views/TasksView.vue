@@ -1,13 +1,18 @@
 <template>
-  <div class="home">
-    <h1>App Task</h1>
-    <router-link to="/TasksView">Start Organizing your Journey</router-link> |
+  <div class="taska">
+    <h1>app takas</h1>
+    <NewTask></NewTask>
   </div>
 </template>
 
 <script>
+import NewTask from '../components/NewTask.vue';
+
 export default {
-  name: 'HomeView',
+  name: 'tasksView',
+  components: {
+    NewTask,
+  },
 };
 </script>
 

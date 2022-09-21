@@ -3,13 +3,19 @@
        <div class="tarea">Nueva tarea</div>
        <input type="text" placeholder="Introduce nueva tarea"
        aria-labelledby="firstname">
-    </div>
+       <button type="submit">Create task</button>
+    <br>
+    <div class="nose">
+        <h6>No hay tareas para mostrar</h6>
+        </div>
+</div>
 </template>
 
 <script>
 export default {
-  name: 'NewTask',
+  name: 'newTask',
 };
+
 </script>
 
 <style>
@@ -25,7 +31,19 @@ export default {
     text-align: center;
 }
 input {
-    width: 100%;
-    height: 10%;
+    width: 60%;
+    height: 11%;
+    border-style: none;
+    text-align: center;
+}
+
+button {
+    width: 20%;
+    height: 11%;
+    background-color: #2c3e50;
+    color: white;
+    border-style: none;
+    margin-left: 2%;
+
 }
 </style>
