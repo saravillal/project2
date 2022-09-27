@@ -12,8 +12,11 @@
       <div>
         <ul class="lista" v-for="(tarea, index) in tareas" v-bind:key="index">
           <li class="lista-grupo d-flex justify-content-between">
-            <span class="cursor">
-              <i class="fa-regular fa-circle"></i></span>
+            <span v-bind:class="[tarea.estado === true ? 'text-success': '', 'cursor']"
+            v-on:click="actualizarTarea(tarea, index)" aria-hidden="true">
+              <i  v-bind:class="
+              [tarea.estado === true ? 'fa-solid fa-circle-check': 'fa-regular fa-circle']"></i>
+              </span>
               <h5>
             {{ tarea.nombre }}
             </h5>
@@ -47,6 +50,9 @@ export default {
     },
     eliminarTarea(index) {
       this.tareas.splice(index, 1);
+    },
+    actualizarTarea(tarea, index) {
+      this.tareas[index].estado = !tarea.estado;
     },
   },
 };
