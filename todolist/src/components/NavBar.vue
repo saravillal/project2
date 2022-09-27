@@ -1,5 +1,6 @@
 <template>
 <nav>
+  <div class="logo2"> Daily Tasks <br>by Sara V.L</div>
   <div class="flex">
     <img src="../assets/logo.png" alt="" />
     <router-link to="/">Home</router-link> |
@@ -31,6 +32,11 @@ export default {
 </script>
 
 <style>
+.logo2 {
+  display: flex;
+  width: 10%;
+  font-weight: bold;
+}
 .flex {
   display: flex;
   justify-content: center;

@@ -7,7 +7,7 @@
 <div id="password">Password:</div>
 <input type="password" aria-labelledby="password" v-model="password">
 <br><button type="submit">Log In</button>
-<br><router-link to="/Auth">Don't have an Account? Click to Register</router-link>
+<br><router-link to="/Auth">Don't hae an Account? Click to Register</router-link>
 </div>
 </form>
 </template>
@@ -32,7 +32,7 @@ export default {
           password: password.value,
         });
         if (error) throw error;
-        router.push({ name: 'home' });
+        router.push({ name: 'tasksView' });
       } catch (error) {
         errorMsg.value = `Error: ${error.message}`;
         /* seTimeout(() => {
