@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import supabase from '../supabase/index';
+import { supabase } from '../supabase';
 
 export default defineStore('tasks', {
   state: () => ({
@@ -11,7 +11,7 @@ export default defineStore('tasks', {
         .from('tasks')
         .select('*')
         .order('id', { ascending: false });
-      this.tasks = tasks; 
+      this.tasks = tasks;
     },
   },
 });

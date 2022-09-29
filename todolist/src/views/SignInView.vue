@@ -63,7 +63,7 @@ export default {
 }
 
 input { margin-top: 1%;
-margin-bottom: %;
+margin-bottom: 5%;
 width: 40%;
 }
 

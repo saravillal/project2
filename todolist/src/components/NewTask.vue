@@ -1,9 +1,11 @@
 <template>
 <div class="container1">
-       <div class="tarea">Nueva tarea</div>
+       <div class="container2">
+        <div class="tarea">Nueva tarea</div>
        <label for="tarea">
+        <button class="primary" @click='fetchTasks()'>Refresh</button>
        <input type="text" placeholder="Introduce nueva tarea"
-       v-model="nombreTarea"
+       v-model="title"
        v-on:keyup.enter="agregarTarea()"
        /></label>
     <br>
@@ -13,7 +15,7 @@
         <ul class="lista" v-for="(tarea, index) in tareas" v-bind:key="index">
           <li class="lista-grupo d-flex justify-content-between">
             <span v-bind:class="[tarea.estado === true ? 'text-success': '', 'cursor']"
-            v-on:click="actualizarTarea(tarea, index)" aria-hidden="true">
+            v-on:click="estado(tarea, index)" aria-hidden="true">
               <i  v-bind:class="
               [tarea.estado === true ? 'fa-solid fa-circle-check': 'fa-regular fa-circle']"></i>
               </span>
@@ -21,45 +23,62 @@
             {{ tarea.nombre }}
             </h5>
             <span class="cursor text-danger" v-on:click="eliminarTarea(index)" aria-hidden="true">
-            <i class="fa-solid fa-trash"></i>
-            </span>
+            <i class="fa-solid fa-trash"></i>" "
+            <i class="fa-regular fa-pen-to-square"  aria-hidden="true"></i></span>
+            <input v-show="editing" v-model="title" />
           </li>
         </ul>
+      </div>
       </div>
 </div>
 </template>
 
 <script>
+import tasksStore from '@/store/tasks';
+import { mapActions } from 'pinia';
+
 export default {
   name: 'newTask',
   data() {
     return {
       tareas: [],
-      nombreTarea: '',
+      title: '',
     };
   },
   methods: {
     agregarTarea() {
       const tarea = {
-        nombre: this.nombreTarea,
+        nombre: this.title,
         estado: false,
       };
       this.tareas.push(tarea);
-      this.nombreTarea = '';
+      this.title = '';
       console.log(this.tareas);
     },
     eliminarTarea(index) {
       this.tareas.splice(index, 1);
     },
-    actualizarTarea(tarea, index) {
+    estado(tarea, index) {
       this.tareas[index].estado = !tarea.estado;
     },
+    ...mapActions(tasksStore, ['fetchTasks']),
   },
 };
 
 </script>
 
 <style>
+
+.container2 {
+  width: 90%;
+  height: 90%;
+  margin-top: -15%;
+}
+
+li {
+  line-height: 10%;
+  font-size: 16px;
+}
 .tabla {
   width: 100%;
   height: auto;
@@ -68,7 +87,7 @@ export default {
 .container1 {
     margin-top: 2%;
     margin-left: 15%;
-    height: 80vh;
+    height: 100vh;
     width: 150vh;
     background-image: url("../assets/tarea.jpg");
     text-align: center;
@@ -76,20 +95,12 @@ export default {
     text-align: center;
 }
 input {
-    width: 60%;
+    width: 100%;
     height: 18%;
     border-style: none;
+    padding: 5%;
     text-align: center;
-}
-
-button {
-    width: 20%;
-    height: 18%;
-    background-color: #2c3e50;
-    color: white;
-    border-style: none;
-    margin-left: 2%;
-
+    margin-bottom: 15%;
 }
 
 .cursor {

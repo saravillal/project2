@@ -1,8 +1,5 @@
 <template>
-  <div class="taska">
-    <h1>app takas</h1>
     <NewTask></NewTask>
-  </div>
 </template>
 
 <script>
