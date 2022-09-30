@@ -1,11 +1,9 @@
 // /store/user.js
-import { reactive } from 'vue';
 import { defineStore } from 'pinia';
 import { supabase } from '../supabase';
 
 export default defineStore('user', {
   state: () => ({
-    reactive,
     user: null,
   }),
 

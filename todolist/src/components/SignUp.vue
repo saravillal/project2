@@ -37,12 +37,8 @@ export default {
     const signUp = async () => {
       if (password.value === confirmPassword.value) {
         try {
-          const { error } = await supabase.auth.signUp({
-            email: email.value,
-            password: password.value,
-          });
-          if (error) throw error;
-          router.push({ name: 'signIn ' });
+          
+          router.push({ name: 'tasksView' });
         } catch (error) {
           errorMsg.value = error.message;
           setTimeout(() => {
