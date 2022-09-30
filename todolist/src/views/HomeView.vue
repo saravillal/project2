@@ -1,11 +1,7 @@
 <template>
   <div class="home">
     <div class="title">Organize your day</div>
-    <ul class="lista">
-      <li> Crea tareas diarias </li>
-      <li> Modifica y edítalas </li>
-      <li> Elimínalas </li>
-        </ul>
+    <div class="sub"><h1>Organize your life and work</h1></div>
     <router-link class="enlace" to="/auth">Start now</router-link>
   </div>
 </template>
@@ -17,9 +13,13 @@ export default {
 </script>
 
 <style>
+.sub {
+  margin-bottom: 10%;
+}
 .title {
   font-weight: bold;
   font-size: 110px;
+  margin-bottom: 14px;
 }
 .home {
   padding: 5%;
@@ -34,7 +34,7 @@ export default {
 }
 .enlace {
   text-align: center;
-  margin-top: 36px;
+  margin-top: 6px;
   background-color: #69A6CA;
   padding: 1%;
   color: white;

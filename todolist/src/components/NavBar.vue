@@ -17,6 +17,7 @@ import store from '../store/user';
 import { supabase } from '../supabase';
 
 export default {
+  name: 'NavBar',
   setup() {
     const user = computed(() => store.state.user);
     const router = useRouter();
@@ -50,10 +51,12 @@ export default {
 }
 nav {
   font-size: 12px;
-  margin-bottom: -2%;
+  margin-bottom: 0%;
   margin-top: -2%;
+  margin-bottom: -2%;
   margin-left: 22%;
   width: 80%;
+  height: auto%;
   display: flex;
   padding: 30px;
   text-align: center;

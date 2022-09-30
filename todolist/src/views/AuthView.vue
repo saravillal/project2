@@ -30,7 +30,7 @@ export default {
     user() {
       if (this.user) {
         console.log(this.user);
-        this.$router.push({ path: '/' });
+        this.$router.push({ path: '/tasksView' });
       }
     },
   },

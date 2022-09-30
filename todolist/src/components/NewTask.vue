@@ -25,7 +25,6 @@
             <span class="cursor text-danger" v-on:click="eliminarTarea(index)" aria-hidden="true">
             <i class="fa-solid fa-trash"></i>" "
             <i class="fa-regular fa-pen-to-square"  aria-hidden="true"></i></span>
-            <input v-show="editing" v-model="title" />
           </li>
         </ul>
       </div>
@@ -35,7 +34,8 @@
 
 <script>
 import tasksStore from '@/store/tasks';
-import { mapActions } from 'pinia';
+import userStore from '@/store/user';
+import { mapActions, mapState } from 'pinia';
 
 export default {
   name: 'newTask',
@@ -47,6 +47,7 @@ export default {
   },
   methods: {
     agregarTarea() {
+      this.createTask(this.title, this.userId);
       const tarea = {
         nombre: this.title,
         estado: false,
@@ -61,7 +62,14 @@ export default {
     estado(tarea, index) {
       this.tareas[index].estado = !tarea.estado;
     },
-    ...mapActions(tasksStore, ['fetchTasks']),
+    ...mapActions(tasksStore, ['fetchTasks', 'createTask']),
+  },
+  computed: {
+    ...mapState(tasksStore, ['tasks']),
+    ...mapState(userStore, ['user']),
+  },
+  created() {
+    this.fetchTasks();
   },
 };
 
