@@ -1,8 +1,10 @@
 <template>
   <div class="home">
+    <div class="text">
     <div class="title">Organize your day</div>
     <div class="sub"><h1>Organize your life and work</h1></div>
     <router-link class="enlace" to="/auth">Start now</router-link>
+    </div>
   </div>
 </template>
 
@@ -13,19 +15,24 @@ export default {
 </script>
 
 <style>
+.text {
+  margin-top: 8%;
+  margin-left: -30%;
+}
 .sub {
   margin-bottom: 10%;
 }
 .title {
   font-weight: bold;
-  font-size: 110px;
+  font-size: 80px;
   margin-bottom: 14px;
 }
 .home {
   padding: 5%;
-  width: 100%;
+  width: 80%;
   height: auto;
  background-image: url("../assets/tarea.jpg");
+ background-repeat: no-repeat;
 }
 .lista {
   line-height: 300%    ;
