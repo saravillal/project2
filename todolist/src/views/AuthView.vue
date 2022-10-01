@@ -1,6 +1,5 @@
 <template>
 <div>
-  <h1>Esta es la vista de SignUp/In</h1>
   <SignUp></SignUp>
   </div>
 </template>
@@ -31,7 +30,7 @@ export default {
     user() {
       if (this.user) {
         console.log(this.user);
-        this.$router.push({ path: '/' });
+        this.$router.push({ path: '/tasksView' });
       }
     },
   },
