@@ -18,6 +18,7 @@ export default {
   height: 800px;
   width: 100%;
  background-image: url("../assets/tarea.jpg");
+ margin-left: 10%;
 
 }
 </style>

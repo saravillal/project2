@@ -23,7 +23,6 @@
 <script>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { supabase } from '../supabase';
 
 export default {
   name: 'signUp',
@@ -33,11 +32,10 @@ export default {
     const password = ref(null);
     const confirmPassword = ref(null);
     const errorMsg = ref(null);
-
     const signUp = async () => {
       if (password.value === confirmPassword.value) {
         try {
-          
+          this.signUp(email, password);
           router.push({ name: 'tasksView' });
         } catch (error) {
           errorMsg.value = error.message;
@@ -76,20 +74,17 @@ export default {
   text-align: center;
   background-color: #69A6CA;
 }
-
 input {
   margin-top: 1%;
   margin-bottom: 1%;
   width: 40%;
 }
-
 button {
   width: 20%;
   font-size: 10px;
   margin-top: 3%;
   margin-bottom: 5%;
 }
-
 .error {
   color: red;
   text-align: center;

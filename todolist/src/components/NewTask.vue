@@ -1,7 +1,6 @@
 <template>
 <div class="container1">
-       <div class="container2">
-        <div class="tarea">Nueva tarea</div>
+  <div class="textos">
        <label for="tarea">
         <button class="primary" @click='fetchTasks()'>Refresh</button>
        <input type="text" placeholder="Introduce nueva tarea"
@@ -23,8 +22,7 @@
             {{ tarea.nombre }}
             </h5>
             <span class="cursor text-danger" v-on:click="eliminarTarea(index)" aria-hidden="true">
-            <i class="fa-solid fa-trash"></i>" "
-            <i class="fa-regular fa-pen-to-square"  aria-hidden="true"></i></span>
+            <i class="fa-solid fa-trash"></i></span>
           </li>
         </ul>
       </div>
@@ -72,35 +70,23 @@ export default {
     this.fetchTasks();
   },
 };
-
 </script>
 
 <style>
-
-.container2 {
-  width: 90%;
-  height: 90%;
-  margin-top: -15%;
-}
-
 li {
   line-height: 10%;
   font-size: 16px;
-}
-.tabla {
-  width: 100%;
-  height: auto;
+  width: 80%;
+  margin-left: 8%;
 }
 
 .container1 {
-    margin-top: 2%;
-    margin-left: 15%;
-    height: 100vh;
-    width: 150vh;
-    background-image: url("../assets/tarea.jpg");
-    text-align: center;
-    padding: 10%;
-    text-align: center;
+  width: 80%;
+  height: 500px;
+  margin-left: 10%;
+  text-align: center;
+  background-image: url("../assets/tarea.jpg");
+  background-repeat: no-repeat;
 }
 input {
     width: 100%;
@@ -110,7 +96,6 @@ input {
     text-align: center;
     margin-bottom: 15%;
 }
-
 .cursor {
   cursor: pointer;
 }

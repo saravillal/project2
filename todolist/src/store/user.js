@@ -1,4 +1,3 @@
-// /store/user.js
 import { defineStore } from 'pinia';
 import { supabase } from '../supabase';
 
